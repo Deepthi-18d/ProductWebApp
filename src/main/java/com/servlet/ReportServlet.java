@@ -39,9 +39,15 @@ public class ReportServlet extends HttpServlet {
                     list = dao.getByCategory(value);
                     break;
 
-                case "top":
-                    int n = Integer.parseInt(value);
+                   int n = Integer.parseInt(value);
                     list = dao.getTopSelling(n);
+
+                    if (list.size() < n) {
+                        req.setAttribute("error", 
+                            "Only " + list.size() + " products available for top selling");
+                        req.getRequestDispatcher("report_form.jsp").forward(req, res);
+                        return;
+                    }
                     break;
 
                 default:
