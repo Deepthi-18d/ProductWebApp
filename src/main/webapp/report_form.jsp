@@ -9,7 +9,14 @@
 
 <div class="container mt-5">
     <h3 class="text-center mb-4">Reports</h3>
-
+<% 
+    String error = (String) request.getAttribute("error");
+    if (error != null) {
+    %>
+        <div class="alert alert-danger text-center">
+            <%= error %>
+        </div>
+    <% } %>
 <%
 String type = request.getParameter("type");
 
