@@ -26,6 +26,13 @@
 
     </div>
 </div>
+<div class="text-center mt-4">
 
+  
+    <a href="index.jsp" class="btn btn-secondary">
+        Home
+    </a>
+
+</div>
 </body>
 </html>
